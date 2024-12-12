@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion"; // Importing motion from framer-motion
 
 type IData = {
   id: number;
@@ -49,18 +52,35 @@ const data: IData[] = [
 
 export default function Blogs() {
   return (
-    <div className="parentContainer">
+    <div className="blogs-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
       {data.map((idata) => (
-        <div key={idata.id} className="childContainer bounce-right">
-          <div className="imageContainer bounce-right">
-            <Image src={idata.imageUrl} alt={idata.title} width={0} height={0} className="blogImage" />
+        <motion.div
+          key={idata.id}
+          className="blog-card relative overflow-hidden rounded-lg shadow-lg bg-white"
+          whileHover={{ scale: 1.05 }} // Add hover effect
+          initial={{ opacity: 0, y: 50 }} // Initial state for animation
+          animate={{ opacity: 1, y: 0 }} // Animate to visible state
+          transition={{ duration: 0.5 }} // Transition duration for animation
+        >
+          <div className="image-container">
+            <Image
+              src={idata.imageUrl}
+              alt={idata.title}
+              width={500}
+              height={300}
+              className="w-full h-full object-cover rounded-full"
+            />
           </div>
-          <h1 className="title">{idata.title}</h1>
-          <p className="description">{idata.description}</p>
-          <Link href={`/blogs/${idata.id}`}>
-            <button className="readMore">Read More</button>
-          </Link>
-        </div>
+          <div className="p-4">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-2">{idata.title}</h2>
+            <p className="text-gray-600 mb-4">{idata.description}</p>
+            <Link href={`/blogs/${idata.id}`}>
+              <button className="read-more-btn text-white bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">
+                Read More
+              </button>
+            </Link>
+          </div>
+        </motion.div>
       ))}
     </div>
   );
