@@ -43,7 +43,7 @@ export default function About() {
               Step 1: Take A Warm Bath, Dry Your Skin...
             </p>
             <Image
-              src="/images 7.png"
+              src="/image7.png"
               alt="Product 1"
               height={300}
               width={300}
@@ -61,7 +61,7 @@ export default function About() {
             <h1 className="text-xl font-semibold text-gray-800 mb-2">Product 2</h1>
             <p className="text-gray-600 mb-4">Step 2: Moisturise...</p>
             <Image
-              src="/images 8.jpg"
+              src="/image8.png"
               alt="Product 2"
               height={300}
               width={300}
@@ -81,7 +81,7 @@ export default function About() {
               Step 3: Apply Perfume Focusing On Pulse Points...
             </p>
             <Image
-              src="/image 13.png"
+              src="/image13.png"
               alt="Product 3"
               height={300}
               width={300}
@@ -101,7 +101,7 @@ export default function About() {
               Step 4: Avoid Rubbing the Perfume on Your Body...
             </p>
             <Image
-              src="/image 14.png"
+              src="/image14.png"
               alt="Product 4"
               height={300}
               width={300}
